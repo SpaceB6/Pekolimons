@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display from GitHub</title>
+</head>
+<body>
+    <h1>Recent Average Price:</h1>
+    <p id="price">Loading...</p>
+
+    <script>
+        // GitHub raw file URL to fetch the HTML page
+        const apiUrl = "https://https://spaceb6.github.io/Pekolimons/api/rap/13481.html";
+
+        // Function to fetch the HTML page and extract the recentAveragePrice
+        async function fetchPriceData() {
+            try {
+                const response = await fetch(apiUrl);
+                const htmlContent = await response.text();
+
+                // Extract the recentAveragePrice value from the HTML content using regex or DOM parsing
+                const regex = /"recentAveragePrice":\s*(\d+)/;
+                const match = htmlContent.match(regex);
+
+                if (match) {
+                    const recentAveragePrice = match[1];
+                    // Update the content of the <p> tag with the recentAveragePrice value
+                    document.getElementById("price").textContent = `$${recentAveragePrice}`;
+                } else {
+                    throw new Error('recentAveragePrice not found in the HTML content.');
+                }
+            } catch (error) {
+                // If there's an error, display it
+                document.getElementById("price").textContent = "Failed to load data.";
+            }
+        }
+
+        // Call the function to fetch data on page load
+        fetchPriceData();
+    </script>
+</body>
+</html>
