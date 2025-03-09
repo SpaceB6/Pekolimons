@@ -1,48 +1,77 @@
-<html><head></head>
+<html style="height: 100%;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="icon" href="https://spaceb6.github.io/Pekolimons/images/favicon.ico.png">
+    
+    <title>Perfectly Legitimate Business Hat
+</title>
+    <style>
+        body {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            margin: 0;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .header {
+            background-color: #0074bd;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        .header img {
+            width: 200px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+        }
+        .catalogItemContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .image-container {
+            position: relative;
+            max-width: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30%;
+        }
+    </style>
+</head>
 <body>
-    <div class="col-12 col-lg-10" data-bm="79">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="title-0-2-66">Perfectly Legitimate Business Hat</h1>
-                <h3 class="subtitle-0-2-67">Hat / Collectible Item</h3>
+    <div class="header">
+        <a href="https://spaceb6.github.io/Pekolimons/" target="_blank">
+    <img src="https://spaceb6.github.io/Pekolimons/images/pekora_logo_new.png" alt="Pekora Logo" style="width: 200px;">
+</a>
+    </div>
+    <div class="container">
+        <div class="catalogItemContainer">
+            <h1>Perfectly Legitimate Business Hat</h1>
+            <h3>Hat / Collectible Item</h3>
+            <div class="image-container">
+                <img src="https://www.pekora.zip/images/thumbnails/82db095aea8bf0b5f7b9d99957fb8d7966a7cad68af77fb20d45cf809f0fa160.png" alt="Perfectly Legitimate Business Hat">
+                <img class="overlay" src="https://spaceb6.github.io/Pekolimons/images/limitedOverlay.png">
             </div>
-            <div class="col-2"></div>
-        </div>
-        <div class="col-12">
-            <div class="row" data-bm="81">
-                <div class="col-12 col-md-6 col-lg-5">
-                    <img class="image-0-2-96" src="https://www.pekora.zip/images/thumbnails/82db095aea8bf0b5f7b9d99957fb8d7966a7cad68af77fb20d45cf809f0fa160.png" alt="Perfectly Legitimate Business Hat" data-bm="80">
-                    <!-- RAP Value will be displayed here -->
-                    <p id="price">RAP: 450</p>
-                </div>
-            </div>
+            <p><strong>Creator:</strong> <a href="/User.aspx?ID=1">ROBLOX</a></p>
+            <p><strong>Created:</strong> 9/23/2024</p>
+            <p><strong>Updated:</strong> 9/23/2024</p>
         </div>
     </div>
-
-    <script>
-        // URL to the raw HTML page containing the price value
-        const apiUrl = "https://spaceb6.github.io/Pekolimons/api/rap/13481.html";
-
-        // Function to fetch the HTML page and display the RAP value
-        async function fetchPriceData() {
-            try {
-                const response = await fetch(apiUrl);
-                const htmlContent = await response.text();
-
-                // The price value is directly in the HTML content as a number
-                const recentAveragePrice = htmlContent.trim();
-
-                // Update the content of the <p> tag with the RAP value
-                document.getElementById("price").textContent = `RAP: ${recentAveragePrice}`;
-            } catch (error) {
-                // If there's an error, display it
-                document.getElementById("price").textContent = "Failed to load data.";
-            }
-        }
-
-        // Call the function to fetch data on page load
-        fetchPriceData();
-    </script>
-
 
 </body></html>
