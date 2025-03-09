@@ -23,7 +23,7 @@
                 const recentAveragePrice = htmlContent.trim();
 
                 // Update the content of the <p> tag with the RAP value
-                document.getElementById("price").textContent = `RAP: $${recentAveragePrice}`;
+                document.getElementById("price").textContent = `RAP: ${recentAveragePrice}`;
             } catch (error) {
                 // If there's an error, display it
                 document.getElementById("price").textContent = "Failed to load data.";
