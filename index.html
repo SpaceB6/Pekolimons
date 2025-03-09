@@ -1,48 +1,5 @@
-<html>
-<head></head>
+<html><head></head>
 <body>
-    <div class="col-12 col-lg-10" data-bm="79">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="title-0-2-66">Perfectly Legitimate Business Hat</h1>
-                <h3 class="subtitle-0-2-67">Hat / Collectible Item</h3>
-            </div>
-            <div class="col-2"></div>
-        </div>
-        <div class="col-12">
-            <div class="row" data-bm="81">
-                <div class="col-12 col-md-6 col-lg-5">
-                    <img class="image-0-2-96" src="https://www.pekora.zip/images/thumbnails/82db095aea8bf0b5f7b9d99957fb8d7966a7cad68af77fb20d45cf809f0fa160.png" alt="Perfectly Legitimate Business Hat" data-bm="80">
-                    <!-- RAP Value will be displayed here -->
-                    <p id="price">Loading...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // URL to the raw HTML page containing the price value
-        const apiUrl = "https://spaceb6.github.io/Pekolimons/api/rap/13481.html";
-
-        // Function to fetch the HTML page and display the RAP value
-        async function fetchPriceData() {
-            try {
-                const response = await fetch(apiUrl);
-                const htmlContent = await response.text();
-
-                // The price value is directly in the HTML content as a number
-                const recentAveragePrice = htmlContent.trim();
-
-                // Update the content of the <p> tag with the RAP value
-                document.getElementById("price").textContent = `RAP: ${recentAveragePrice}`;
-            } catch (error) {
-                // If there's an error, display it
-                document.getElementById("price").textContent = "Failed to load data.";
-            }
-        }
-
-        // Call the function to fetch data on page load
-        fetchPriceData();
-    </script>
-</body>
-</html>
+<a href="https://spaceb6.github.io/Pekolimons/items/13481/">Perfectly Legitimate Business Hat
+</a>
+</body></html>
