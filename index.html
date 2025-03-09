@@ -10,26 +10,21 @@
     <p id="price">Loading...</p>
 
     <script>
-        // GitHub raw file URL to fetch the HTML page
+        // URL to the raw HTML page containing the price value
         const apiUrl = "https://spaceb6.github.io/Pekolimons/api/rap/13481.html";
 
-        // Function to fetch the HTML page and extract the recentAveragePrice
+        // Function to fetch the HTML page and display the number
         async function fetchPriceData() {
             try {
                 const response = await fetch(apiUrl);
                 const htmlContent = await response.text();
 
-                // Extract the recentAveragePrice value from the HTML content using regex or DOM parsing
-                const regex = /"recentAveragePrice":\s*(\d+)/;
-                const match = htmlContent.match(regex);
+                // The price value is directly in the HTML content as a number
+                // Assuming the content is just the number
+                const recentAveragePrice = htmlContent.trim();
 
-                if (match) {
-                    const recentAveragePrice = match[1];
-                    // Update the content of the <p> tag with the recentAveragePrice value
-                    document.getElementById("price").textContent = `$${recentAveragePrice}`;
-                } else {
-                    throw new Error('recentAveragePrice not found in the HTML content.');
-                }
+                // Update the content of the <p> tag with the price value
+                document.getElementById("price").textContent = `$${recentAveragePrice}`;
             } catch (error) {
                 // If there's an error, display it
                 document.getElementById("price").textContent = "Failed to load data.";
